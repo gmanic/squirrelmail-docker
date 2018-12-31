@@ -13,9 +13,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && pear install DB \
   && echo 'LANG=de_DE' > /etc/default/locale \
-  && echo 'LC_ALL=de_DE' >> /etc/default/locale \
-  && export LC_ALL=de_DE \
-  && export LANG=de_DE \
   && echo 'register_globals = Off' > /usr/local/etc/php/conf.d/squirrelmail.ini \
   && echo 'magic_quotes_runtime = Off' >> /usr/local/etc/php/conf.d/squirrelmail.ini \
   && echo 'magic_quotes_gpc = Off' >> /usr/local/etc/php/conf.d/squirrelmail.ini \
@@ -28,6 +25,7 @@ RUN cd /var/www/html \
   && wget "${SUIRRELMAIL_URL}" -O squirrelmail-webmail-${SQUIRRELMAIL_VERSION}.tar.gz \
   && tar -xvzf squirrelmail-webmail-${SQUIRRELMAIL_VERSION}.tar.gz --strip-components=1 \
   && rm squirrelmail-webmail-${SQUIRRELMAIL_VERSION}.tar.gz \
+  && export LANG=de_DE \
   && chown -R www-data:www-data .
 
 
