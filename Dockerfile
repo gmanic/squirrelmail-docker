@@ -12,7 +12,10 @@ RUN apt-get update \
   && docker-php-ext-install mysqli curl gd zip mbstring imap iconv \
   && rm -rf /var/lib/apt/lists/* \
   && pear install DB \
-  && echo 'LANG=de_DE.utf8' > /etc/default/locale \
+  && echo 'LANG=de_DE' > /etc/default/locale \
+  && echo 'LC_ALL=de_DE' >> /etc/default/locale \
+  && export LC_ALL=de_DE \
+  && export LANG=de_DE \
   && echo 'register_globals = Off' > /usr/local/etc/php/conf.d/squirrelmail.ini \
   && echo 'magic_quotes_runtime = Off' >> /usr/local/etc/php/conf.d/squirrelmail.ini \
   && echo 'magic_quotes_gpc = Off' >> /usr/local/etc/php/conf.d/squirrelmail.ini \
