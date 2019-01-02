@@ -19,7 +19,7 @@ RUN apt-get update \
   && echo 'error_reporting = E_ERROR' >> /usr/local/etc/php/conf.d/squirrelmail.ini
 
 ENV SUIRRELMAIL_URL "https://sourceforge.net/projects/squirrelmail/files/stable/${SQUIRRELMAIL_VERSION}/squirrelmail-webmail-${SQUIRRELMAIL_VERSION}.tar.gz/download?use_mirror=heanet"
-ENV LANG "de_DE"
+ENV LANG "de_DE.UTF-8"
 
 RUN cd /var/www/html \
   && wget "${SUIRRELMAIL_URL}" -O squirrelmail-webmail-${SQUIRRELMAIL_VERSION}.tar.gz \
