@@ -7,6 +7,7 @@ ENV SQUIRRELMAIL_VERSION 1.4.22
 RUN apt-get update \
   && apt-get upgrade -y \
   && apt-get install -y locales-all libcurl4-gnutls-dev libpng-dev libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree libjpeg-dev libpng-dev wget \
+  && export DEBCONF_FRONTEND=noninteractive \
   && echo "set locales/locales_to_be_generated de_DE.UTF-8 UTF-8" | debconf-communicate \
   && echo "set locales/default_environment_locale de_DE.UTF-8" | debconf-communicate \
   && apt-get install -y locales \
