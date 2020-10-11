@@ -33,3 +33,4 @@ RUN cd /var/www/html \
 
 
 VOLUME /var/squirrelmail
+# Docker rebuild change only
