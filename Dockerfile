@@ -31,6 +31,5 @@ RUN cd /var/www/html \
   && rm squirrelmail-webmail-${SQUIRRELMAIL_VERSION}.tar.gz \
   && chown -R www-data:www-data .
 
-
 VOLUME /var/squirrelmail
 # Docker rebuild change only
