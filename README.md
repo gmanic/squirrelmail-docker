@@ -1,3 +1,6 @@
+ARCHIVED
+no maintenance anymore, not used anymore
+
 # squirrelmail-docker
 Docker image for Squirrel WebMail with German translation enabled.
 
